@@ -1,0 +1,64 @@
+#!/bin/bash
+
+# Set input and output directories
+raw_data_dir="/home/mslab/Documents/analyses/results_exome/exome_raw_data"
+output_dir="/home/mslab/Documents/analyses/results_exome/exome_results"
+
+# Logging setup
+start_time=<span class="math-inline">\(date \+"%Y\-%m\-%d\_%H\-%M\-%S"\)
+log_file="</span>{output_dir}/<span class="math-inline">\{start\_time\}\_wes\_analysis\.log"
+# Function to log messages
+function log_message {
+echo "[</span>(date +"%Y-%m-%d_%H-%M-%S")] - $1" >> "<span class="math-inline">log_file"}
+# Update reference genome
+reference\_genome\="/home/mslab/Documents/Genomes/Homo_sapiens/NCBI/GRCh38/Sequence/BWAIndex/version0.6.0/genome.fa"
+# 1. Quality control with 18 samples
+log_message "Starting quality control\.\.\."
+fastqc \-t 18 "</span>{raw_data_dir}/*.fastq.gz" >> "<span class="math-inline">\{log_file}"
+prinseq\-lite \-fastq "</span>{raw_data_dir}/*.fastq.gz" -out_dir "<span class="math-inline">\{output\_dir\}/qc" \-log "</span>{log_file}" -pmax 30 -lmin 75
+
+# 2. Preprocessing
+log_message "Performing preprocessing..."
+zcat "<span class="math-inline">\{raw\_data\_dir\}/\*\.fastq\.gz" \| cutadapt \-o "</span>{output_dir}/preprocessed/trimmed.fastq" \
+         -p "<span class="math-inline">\{output\_dir\}/preprocessed/adapter\.fa" \>\> "</span>{log_file}"
+zcat "<span class="math-inline">\{raw\_data\_dir\}/\*\.fastq\.gz" \| trimmomatic PE \-phred33 \\
+\-ILLUMINACLIP\:"</span>{output_dir}/preprocessed/adapter.fa:LEADING:3:TRAILING:3" \
+             -PE "<span class="math-inline">\{output\_dir\}/preprocessed/trimmed\_1\.fastq" "</span>{output_dir}/preprocessed/trimmed_2.fastq" \
+             "<span class="math-inline">\{output\_dir\}/preprocessed/trimmed\_1\_paired\.fastq" "</span>{output_dir}/preprocessed/trimmed_1_unpaired.fastq" \
+             "<span class="math-inline">\{output\_dir\}/preprocessed/trimmed\_2\_paired\.fastq" "</span>{output_dir}/preprocessed/trimmed_2_unpaired.fastq" >> "${log_file}"
+
+# 3. Alignment
+log_message "Aligning reads to hg38..."
+bwa mem -t 8 \
+       "<span class="math-inline">reference\_genome" \\
+"</span>{output_dir}/preprocessed/trimmed_1_paired.fastq" "<span class="math-inline">\{output\_dir\}/preprocessed/trimmed\_2\_paired\.fastq" \> "</span>{output_dir}/alignment/aligned.sam" 2>> "<span class="math-inline">{log_file}"
+# 4. Post-alignment processing
+log_message "Performing post-alignment processing\.\.\."
+samtools view \-bS \-q 20 "</span>{output_dir}/alignment/aligned.sam" > "<span class="math-inline">\{output\_dir\}/alignment/filtered\.bam" 2\>\> "</span>{log_file}"
+picard MarkDuplicates I="<span class="math-inline">\{output\_dir\}/alignment/filtered\.bam" O\="</span>{output_dir}/alignment/deduplicated.bam" M="<span class="math-inline">\{output\_dir\}/alignment/metrics\.txt" 2\>\> "</span>{log_file}"
+gatk BaseRecalibrator -R "<span class="math-inline">reference\_genome" \-I "</span>{output_dir}/alignment/deduplicated.bam" -o "<span class="math-inline">\{output\_dir\}/alignment/recal\.table" 2\>\> "</span>{log_file}"
+gatk ApplyBQSR -R "<span class="math-inline">reference\_genome" \-I "</span>{output_dir}/alignment/deduplicated.bam" -o "<span class="math-inline">\{output\_dir\}/alignment/recalibrated\.bam" \-bqsr\-recal\-file "</span>{output_dir}/alignment/recal.table" 2>> "${log_file}"
+
+# 5. Variant calling
+log_message "Calling variants with GATK and Freebayes..."
+gatk HaplotypeCaller -R "<span class="math-inline">reference\_genome" \-I "</span>{output_dir}/alignment/recalibrated.bam" -o "<span class="math-inline">\{output\_dir\}/variants/raw\_variants\.vcf" 2\>\> "</span>{log_file}"
+freebayes -f "<span class="math-inline">reference\_genome" "</span>{output_dir}/alignment/recalibrated.bam" > "<span class="math-inline">\{output\_dir\}/variants/freebayes\_variants\.vcf" 2\>\> "</span>{log_file}"
+
+# 6. Variant annotation
+log_message "Annotating variants..."
+bcftools annotate -x ANNOVAR -Ob -o "<span class="math-inline">\{output\_dir\}/variants/annotated\_raw\_variants\.vcf" "</span>{output_dir}/variants/raw_variants.vcf"
+# Add custom databases
+
+# 7. Filter annotated VCF for variants relevant to pancreatitis and diabetes
+log_message "Filtering annotated variants..."
+bcftools filter -i '(ANNOVAR[INFO].GeneName=="PRSS1" || ANNOVAR[INFO].GeneName=="CFTR" || ANNOVAR[INFO].GeneName=="HNF4A")'
+-i 'ANNOVAR[INFO].Consequence=="LoF" || ANNOVAR[INFO].Consequence=="Missense"' -o "outputdir/variants/pancreasdiabetesvariants.vcf""{output_dir}/variants/annotated_raw_variants.vcf"
+
+# 8. Prioritize variants based on MAF and predicted functional impact
+log_message "Prioritizing annotated variants..."
+vcf2csv -f "${output_dir}/variants/pancreas_diabetes_variants.vcf" |
+cut -f1,2,3,4,5,8,10 |
+awk '{if ($7 >= 0.5) print $0; else if ($6 == "LoF") print $0}' |
+sort -nrk7 > "${output_dir}/variants_for_verification.txt"
+
+
