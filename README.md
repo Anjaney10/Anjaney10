@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @Anjaney10
-- 👀 I’m interested in Computer Science and Programming.
-- 🌱 I’m currently learning Linux, Python, C and C++
+- 👀 I’m interested in biology.
+- 🌱 I’m currently learning Linux, Python, and R.
 
 
 <!---
