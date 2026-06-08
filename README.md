@@ -18,9 +18,9 @@ I am interested in roles where I can contribute to:
 
 ---
 
-## 🧰 Technical Toolkit
+## Technical Toolkit
 
-## 🛠️ Command Line Tools
+### Command Line Tools
 ![Bash](https://img.shields.io/badge/Bash-121011?style=for-the-badge&logo=gnu-bash&logoColor=white)
 ![NextFlow](https://img.shields.io/badge/NextFlow-1A9966?style=for-the-badge&logo=nextflow&logoColor=white)
 ![SAMtools](https://img.shields.io/badge/SAMtools-437291?style=for-the-badge&logoColor=white)
@@ -29,12 +29,12 @@ I am interested in roles where I can contribute to:
 ![STAR](https://img.shields.io/badge/STAR-FF6B6B?style=for-the-badge&logoColor=white)
 ![Salmon](https://img.shields.io/badge/Salmon-FF6B6B?style=for-the-badge&logoColor=white)
 
-## 🧬 Protein Structure Modeling
+### Protein Structure Modeling
 ![ColabFold](https://img.shields.io/badge/ColabFold-FFB500?style=for-the-badge&logoColor=white)
 ![SWISS--MODEL](https://img.shields.io/badge/SWISS--MODEL-0078D4?style=for-the-badge&logoColor=white)
 ![RoseTTAFold](https://img.shields.io/badge/RoseTTAFold-FF6B6B?style=for-the-badge&logoColor=white)
 
-## 🐍 Python Libraries
+### Python Libraries
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![BioPython](https://img.shields.io/badge/BioPython-6BA03C?style=for-the-badge&logoColor=white)
 ![Scikit--learn](https://img.shields.io/badge/Scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
@@ -47,7 +47,7 @@ I am interested in roles where I can contribute to:
 ![SquidPy](https://img.shields.io/badge/SquidPy-FF6B6B?style=for-the-badge&logoColor=white)
 ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
 
-## 📊 R Packages
+### R Packages
 ![R](https://img.shields.io/badge/R-276DC3?style=for-the-badge&logo=r&logoColor=white)
 ![ggplot2](https://img.shields.io/badge/ggplot2-FF6B6B?style=for-the-badge&logoColor=white)
 ![Seurat](https://img.shields.io/badge/Seurat-1A9966?style=for-the-badge&logoColor=white)
@@ -61,7 +61,7 @@ I am interested in roles where I can contribute to:
 
 ---
 
-## 🚀 Featured Projects
+## Featured Projects
 
 ### 1. Spatial Transcriptomics Analysis Platform
 
@@ -86,9 +86,9 @@ Built **spatial_analyser**, a high-performance web application for interactive a
 Developed a comprehensive tool for visualizing and interpreting gene regulatory networks (GRNs). This project enables researchers to explore complex regulatory relationships between genes, providing insights into biological mechanisms and system-level behavior through sophisticated graph visualization and analysis.
 
 **Highlights**
-- Built Python-based tool for GRN graph construction and analysis
+- Built a Python-based tool for GRN graph construction and analysis
 - Implemented network visualization algorithms for complex biological networks
-- Designed scalable architecture to handle large-scale regulatory network data
+- Designed a scalable architecture to handle large-scale regulatory network data
 - Created interactive visualization components for exploring gene-gene regulatory relationships
 - Developed computational workflows for network analysis and topology characterization
 - Engineered solutions for visualizing multi-level regulatory hierarchies and feedback loops
@@ -118,7 +118,7 @@ Completed original research in computational cancer biology as part of Prof. Moh
 ---
 
 
-## 🤝 Let's Connect
+## Let's Connect!
 
 **I combine biology expertise with strong software engineering practices, making me ideal for bioinformatics and research software roles.**
 
