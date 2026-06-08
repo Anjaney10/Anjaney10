@@ -1,12 +1,11 @@
 # From Molecules to Medicine 
 ## A passionate researcher building a healthier future
 
-I have over 4 years of research experience in academia and industry.
-I enjoy building tools and deciphering complex, data-driven questions in biological systems.
+- I have over 4 years of research experience in academia and industry.
+- I enjoy building tools and deciphering complex, data-driven questions in biological systems.
+- My background combines **bioengineering**, **bioinformatics**, and **molecular biology**, which allows me to move comfortably between biological questions and scalable data workflows.
 
 ### Bioinformatics • Spatial Transcriptomics • Machine Learning
-
-My background combines **bioengineering**, **bioinformatics**, and **molecular biology**, which allows me to move comfortably between biological questions and scalable data workflows.
 
 ---
 
@@ -59,8 +58,6 @@ I am interested in roles where I can contribute to:
 ![GeomxTools](https://img.shields.io/badge/GeomxTools-FF6B6B?style=for-the-badge&logoColor=white)
 ![gProfileR](https://img.shields.io/badge/gProfileR-1A9966?style=for-the-badge&logoColor=white)
 ![tidyverse](https://img.shields.io/badge/tidyverse-1F77D4?style=for-the-badge&logoColor=white)
-
-**Bioinformatics & Scientific Computing:** NGS analysis, RNA-seq, ChIP-seq, genome assembly, spatial transcriptomics, AlphaFold 3, PyMOL, Nextflow, SLURM, HPC workflows
 
 ---
 
@@ -120,7 +117,8 @@ Completed original research in computational cancer biology as part of Prof. Moh
 
 ---
 
-## Let's get in touch
+
+## 🤝 Let's Connect
 
 **I combine biology expertise with strong software engineering practices, making me ideal for bioinformatics and research software roles.**
 
@@ -130,10 +128,6 @@ Completed original research in computational cancer biology as part of Prof. Moh
 - **Collaboration & Communication:** Cross-disciplinary teamwork, technical writing, presentations
 
 **Interested in:** Bioinformatics | Computational Biology | ML for Biology/Healthcare | Research Software Engineering
-
----
-
-## 🤝 Let's Connect
 
 - GitHub: [github.com/Anjaney10](https://github.com/Anjaney10)
 - LinkedIn: [linkedin.com/in/anjaneyj](https://linkedin.com/in/anjaneyj)
