@@ -1,4 +1,5 @@
-# Molecules to Medicine: A passionate researcher building a healthier future
+# From Molecules to Medicine 
+## A passionate researcher building a healthier future
 
 I have over 4 years of research experience in academia and industry.
 I enjoy building tools and deciphering complex, data-driven questions in biological systems.
