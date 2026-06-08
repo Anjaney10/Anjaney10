@@ -1,6 +1,8 @@
-# Hi, I am Anjaney Pandey, currently working as a research scientist at the National Centre for Biological Sciences in Bangalore (INDIA)
-I have over four years of research experience in academia and industry work.
-I enjoy building tools and deciphering complex data-oriented questions for biological systems.
+# Molecules to Medicine: 
+## A passionate researcher building a healthier future
+
+I have over 4 years of research experience in academia and industry.
+I enjoy building tools and deciphering complex, data-driven questions in biological systems.
 
 ### Bioinformatics • Spatial Transcriptomics • Machine Learning
 
@@ -112,7 +114,7 @@ Completed original research in computational cancer biology as part of Prof. Moh
 - Integrated computational and experimental insights for systems-level understanding
 - Maintained rigorous documentation and reproducible computational workflows throughout research
 
-**Tech:** `Jupyter Notebook` `R` `Statistical Analysis` `Cancer Biology` `Systems Biology` `Computational Biology` `Data Science` `Scientific Computing` `IISc Research`
+**Tech:** `Jupyter Notebook` `R` `Statistical Analysis` `Cancer Biology` `Systems Biology` `Computational Biology` `Data Science` `Scientific Computing` `IISc Bengaluru Research`
 
 [View Repository](https://github.com/Anjaney10/Master-Thesis)
 
