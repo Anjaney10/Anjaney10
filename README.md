@@ -5,8 +5,6 @@
 - I enjoy building tools and deciphering complex, data-driven questions in biological systems.
 - My background combines **bioengineering**, **bioinformatics**, and **molecular biology**, which allows me to move comfortably between biological questions and scalable data workflows.
 
-### Bioinformatics • Spatial Transcriptomics • Machine Learning
-
 ---
 
 I am interested in roles where I can contribute to:
