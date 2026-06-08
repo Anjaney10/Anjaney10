@@ -120,12 +120,12 @@ Completed original research in computational cancer biology as part of Prof. Moh
 
 ---
 
-## 📌 Why Recruiters Should Reach Out
+## Let's get in touch
 
 **I combine biology expertise with strong software engineering practices, making me ideal for bioinformatics and research software roles.**
 
 - **Biology & Domain Knowledge:** Genomics, transcriptomics, structural biology, molecular biology
-- **Software Craftsmanship:** Clean code, documentation, testing, maintainable tools
+- **Software Skills:** Clean code, documentation, testing, maintainable tools
 - **Scalable Computing:** HPC, SLURM, Docker, AWS, large-scale data processing
 - **Collaboration & Communication:** Cross-disciplinary teamwork, technical writing, presentations
 
